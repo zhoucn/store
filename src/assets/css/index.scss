@@ -1,0 +1,303 @@
+@import './base_value.scss';
+@import './mixin.scss';
+
+html, body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+
+  a {
+    text-decoration: none;
+  }
+
+  img {
+    border: none;
+  }
+
+  p, ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+  @include px2rem(padding-top, 80);
+  @include px2rem(padding-bottom, 92);
+
+  .iScroll {
+    height: 100%;
+  }
+
+}
+
+.mint-header {
+  background-color: $baseColor;
+  @include px2rem(height, 80);
+  @include px2px(font-size, 32);
+  padding: 0;
+
+  .mint-header-title {
+    margin: 0;
+    @include px2rem(height, 80);
+    @include px2rem(line-height, 80);
+  }
+
+  .mint-header-button {
+    height: 100%;
+
+    .mint-button {
+      height: 100%;
+      @include px2rem(width, 80);
+
+      .mint-button-icon {
+        height: 100%;
+        width: 100%;
+        position: relative;
+
+        .mintui {
+          display: inline-block;
+          font-weight: bold;
+          @include px2px(font-size, 40);
+          @include center();
+        }
+
+      }
+    }
+  }
+}
+
+.mint-search {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+  height: auto;
+  background-color: #fff;
+
+  .mint-searchbar {
+    @include px2rem(padding-top, 16);
+    @include px2rem(padding-bottom, 16);
+    @include px2px(padding-left, 20);
+    @include px2px(padding-right, 20);
+    background-color: $baseColor;
+
+    .mint-searchbar-inner {
+      @include px2rem(height, 56);
+
+      .mintui-search {
+        @include px2px(font-size, 40);
+      }
+
+      .mint-searchbar-core {
+        @include px2px(font-size, 32);
+        @include px2px(padding-left, 20);
+        @include px2px(padding-right, 20);
+      }
+
+    }
+    .mint-searchbar-cancel {
+      @include px2px(font-size, 32);
+      color: #fff;
+      @include px2rem(padding-top, 7);
+      @include px2rem(padding-bottom, 7);
+      @include px2rem(padding-left, 12);
+      @include px2rem(padding-right, 12);
+    }
+
+  }
+  .mint-search-list {
+    @include px2rem(padding-top, 100);
+
+    .mint-cell-wrapper {
+      @include px2px(font-size, 32);
+      @include px2px(padding-left, 20);
+      @include px2px(padding-right, 20);
+      @include px2px(line-height, 64);
+      background-color: #e2e2e2;
+    }
+
+  }
+}
+
+.mint-swipe {
+  height: 0;
+  padding-top: 31.29%;
+
+  .mint-swipe-items-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    .mint-swipe-item {
+
+      a {
+        display: block;
+        height: 100%;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+
+      }
+    }
+  }
+  .mint-swipe-indicator {
+    opacity: 0.5;
+    @include px2px(width, 16);
+    @include px2px(height, 16);
+    @include px2px(margin-left, 6);
+    @include px2px(margin-right, 6);
+  }
+
+}
+
+.recommend {
+  @include px2rem(padding-left, 25);
+  @include px2rem(padding-right, 25);
+  font-size: 0;
+
+  li {
+    display: inline-block;
+    @include px2rem(width, 140);
+    @include px2rem(padding-top, 30);
+
+    a {
+      display: block;
+
+      img {
+        width: 100%;
+      }
+
+      p {
+        text-align: center;
+        color: #666;
+        @include px2px(font-size, 24);
+        @include px2rem(padding-top, 15);
+      }
+
+    }
+  }
+}
+
+.hot-news {
+  display: flex;
+  display: -webkit-flex;
+  font-size: 0;
+  @include px2rem(margin-top, 20);
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  @include px2rem(padding-left, 25);
+  @include px2rem(padding-right, 25);
+  @include px2rem(padding-top, 10);
+  @include px2rem(padding-bottom, 10);
+
+  & > span {
+    display: inline-block;
+    @include px2rem(padding-right, 10);
+
+    img {
+      @include px2rem(height, 50);
+    }
+
+  }
+  p {
+    border-left: 1px solid #e5e5e5;
+    @include px2rem(padding-left, 10);
+
+    span {
+      display: inline-block;
+      @include px2px(font-size, 24);
+      vertical-align: -webkit-baseline-middle;
+
+      &.tag {
+        @include px2rem(padding-left, 5);
+        @include px2rem(padding-right, 5);
+        @include px2rem(margin-right, 10);
+        @include px2px(border-radius, 5);
+        color: $baseColor;
+        border: 1px solid $baseColor;
+      }
+
+      &.txt {
+        @include px2rem(line-height, 50);
+        @include px2rem(width, 430);
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+
+    }
+  }
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fafafa;
+  border: 1px solid #f5f5f5;
+
+  ul {
+    display: flex;
+    display: -webkit-flex;
+
+    li {
+      flex: 1;
+
+      a {
+        @include px2rem(padding-top, 10);
+        text-align: center;
+        display: block;
+        color: #666;
+
+        &
+        .active {
+          background-color: #fff;
+          color: $baseColor;
+        }
+
+        @include px2px(font-size, 24);
+        i {
+          @include px2px(font-size, 44);
+        }
+
+        p {
+          @include px2rem(padding-bottom, 5);
+        }
+
+      }
+    }
+  }
+}
+
+.s-box{
+  display: flex;
+  display: -webkit-flex;
+  background-color: #e5e5e5;
+  @include px2rem(padding-top,10);
+  & > div{
+    background-color: #fff;
+  }
+  .s-left{
+    @include px2rem(width,275);
+  }
+  .s-right{
+    @include px2rem(width,475);
+  }
+}

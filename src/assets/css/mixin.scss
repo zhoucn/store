@@ -1,0 +1,49 @@
+@mixin px2rem($name, $px) {
+  #{$name}: ($px / 75)*1rem;
+}
+
+@mixin px2px($name, $px){
+  #{$name}: round($px / 2) * 1px;
+  [data-dpr="2"] & {
+    #{$name}: $px * 1px;
+  }
+  [data-dpr="2.5"] & {
+    #{$name}: round($px * 2.5 / 2) * 1px;
+  }
+  [data-dpr="2.75"] & {
+    #{$name}: round($px * 2.75 / 2) * 1px;
+  }
+  [data-dpr="3"] & {
+    #{$name}: round($px / 2 * 3) * 1px
+  }
+  [data-dpr="4"] & {
+    #{$name}: $px * 2px;
+  }
+}
+
+@mixin center(){
+  position: absolute;
+  top:50%;
+  left:50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+@mixin transform($value){
+  -webkit-transform: #{($value)};
+  -moz-transform: #{($value)};
+  -ms-transform: #{($value)};
+  -o-transform: #{($value)};
+  transform: #{($value)};
+}
+
+@mixin transition($value){
+  -webkit-transition: #{($value)};
+  -moz-transition: #{($value)};
+  -ms-transition: #{($value)};
+  -o-transition: #{($value)};
+  transition: #{($value)};
+}
