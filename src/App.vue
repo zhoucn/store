@@ -33,10 +33,29 @@
           <p><span class="tag">热文</span><span class="txt">油污万万别用钢丝球擦，教你一招洁净如初</span></p>
         </div>
         <div class="s-box">
-          <div class="s-left">88888</div>
-          <div class="s-right">
-            <div>8888</div>
-            <div>888888</div>
+          <div class="s-single">
+            <a href=""><img src="./assets/img/recommend/l1.jpg" alt=""></a>
+          </div>
+          <div class="s-double">
+            <ul class="s-half">
+              <li><a href=""><img src="./assets/img/recommend/r1.jpg" alt=""></a></li>
+              <li><a href=""><img src="./assets/img/recommend/r2.png" alt=""></a></li>
+              <li><a href=""><img src="./assets/img/recommend/r1.jpg" alt=""></a></li>
+              <li><a href=""><img src="./assets/img/recommend/r2.png" alt=""></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="s-box">
+          <div class="s-double">
+            <ul class="s-half">
+              <li><a href=""><img src="./assets/img/recommend/r1.jpg" alt=""></a></li>
+              <li><a href=""><img src="./assets/img/recommend/r2.png" alt=""></a></li>
+              <li><a href=""><img src="./assets/img/recommend/r1.jpg" alt=""></a></li>
+              <li><a href=""><img src="./assets/img/recommend/r2.png" alt=""></a></li>
+            </ul>
+          </div>
+          <div class="s-single">
+            <a href=""><img src="./assets/img/recommend/l1.jpg" alt=""></a>
           </div>
         </div>
       </div>
@@ -97,7 +116,7 @@
     mounted(){
       this.$nextTick(function(){
         var iscroll = new IScroll(this.$refs.iScroll,{
-          useTransition: false
+          click:true
         });
       })
     }

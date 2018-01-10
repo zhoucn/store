@@ -290,14 +290,29 @@ html, body {
   display: flex;
   display: -webkit-flex;
   background-color: #e5e5e5;
+  @include px2px(font-size, 36);
   @include px2rem(padding-top,10);
+  a{
+    display: block;
+    height: 100%;
+    img{
+      width: 100%;
+    }
+  }
   & > div{
     background-color: #fff;
   }
-  .s-left{
-    @include px2rem(width,275);
+  .s-single{
+    @include px2rem(width,300);
   }
-  .s-right{
-    @include px2rem(width,475);
+  .s-double{
+    @include px2rem(width,450);
+    ul{
+      font-size:0;
+      &.s-half li{
+        display:inline-block;
+        width:50%;
+      }
+    }
   }
 }
