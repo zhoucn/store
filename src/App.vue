@@ -1,9 +1,10 @@
 <template>
   <div id="app">
-    <mt-header fixed title="商城">
-      <mt-button icon="search" slot="left" @click="searchClick"></mt-button>
-      <mt-button icon="more" slot="right"></mt-button>
-    </mt-header>
+    <!--<mt-header fixed title="商城">-->
+      <!--<mt-button icon="search" slot="left" @click="searchClick"></mt-button>-->
+      <!--<mt-button icon="more" slot="right"></mt-button>-->
+    <!--</mt-header>-->
+    <my-header></my-header>
     <mt-search v-if="searchShow" v-model="searchValue" cancel-text="取消" placeholder="搜索">
       <mt-cell v-for="item in searchResult" :title="item.title" :value="item.value">
       </mt-cell>
@@ -33,6 +34,7 @@
           <p><span class="tag">热文</span><span class="txt">油污万万别用钢丝球擦，教你一招洁净如初</span></p>
         </div>
         <div class="s-box">
+          <h3>今日推荐</h3>
           <div class="s-single">
             <a href=""><img src="./assets/img/recommend/l1.jpg" alt=""></a>
           </div>
@@ -63,34 +65,19 @@
     <footer class="footer">
       <ul>
         <li>
-          <a class="active" href="">
-            <i class="fa fa-home"></i>
-            <p>首页</p>
-          </a>
+          <a class="active" href=""><i class="fa fa-home"></i><p>首页</p></a>
         </li>
         <li>
-          <a href="">
-            <i class="fa fa-rss"></i>
-            <p>资讯</p>
-          </a>
+          <a href=""><i class="fa fa-rss"></i><p>资讯</p></a>
         </li>
         <li>
-          <a href="">
-            <i class="fa fa-commenting"></i>
-            <p>消息</p>
-          </a>
+          <a href=""><i class="fa fa-commenting"></i><p>消息</p></a>
         </li>
         <li>
-          <a href="">
-            <i class="fa fa-shopping-cart"></i>
-            <p>购物车</p>
-          </a>
+          <a href=""><i class="fa fa-shopping-cart"></i><p>购物车</p></a>
         </li>
         <li>
-          <a href="">
-            <i class="fa fa-user-circle-o"></i>
-            <p>我的</p>
-          </a>
+          <a href=""><i class="fa fa-user-circle-o"></i><p>我的</p></a>
         </li>
       </ul>
     </footer>
@@ -98,6 +85,7 @@
 </template>
 
 <script>
+  import header from './components/header.vue'
   import IScroll from 'iscroll'
   export default {
     name: 'app',
@@ -116,9 +104,13 @@
     mounted(){
       this.$nextTick(function(){
         var iscroll = new IScroll(this.$refs.iScroll,{
+          mouseWheel: true,
           click:true
         });
       })
+    },
+    components:{
+      'my-header':header
     }
   }
 </script>
