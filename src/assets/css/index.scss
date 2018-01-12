@@ -267,17 +267,19 @@ html[data-dpr='1']{
 
     li {
       flex: 1;
-
+      position:relative;
+      &.active {
+        background-color: $baseColor;
+        a{
+          color: #fff;
+        }
+      }
       a {
+        @include center();
         @include px2rem(padding-top, 10);
         text-align: center;
         display: block;
         color: #666;
-
-        &.active {
-          background-color: $baseColor;
-          color: #fff;
-        }
 
         @include px2px(font-size, 24);
         i {
@@ -299,7 +301,15 @@ html[data-dpr='1']{
   overflow: hidden;
   background-color: #fff;
   @include px2px(margin-bottom,10);
-  @include px2rem(padding-top,10);
+  h3{
+    margin:0;
+    color:#f30;
+    text-align:center;
+    font-weight:normal;
+    @include px2px(font-size, 27);
+    @include px2rem(padding,10);
+    border-bottom:1px solid #ccc;
+  }
   a{
     display: block;
     height: 100%;

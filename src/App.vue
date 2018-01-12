@@ -64,8 +64,8 @@
     </div>
     <footer class="footer">
       <ul>
-        <li>
-          <a class="active" href=""><i class="fa fa-home"></i><p>首页</p></a>
+        <li class="active">
+          <a href=""><i class="fa fa-home"></i><p>首页</p></a>
         </li>
         <li>
           <a href=""><i class="fa fa-rss"></i><p>资讯</p></a>
